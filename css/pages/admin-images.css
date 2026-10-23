@@ -1,0 +1,64 @@
+:root{--ink:#211f1b;--muted:#777168;--paper:#f6f2ec;--white:#fffdfa;--line:#ded8ce;--accent:#9b7a54;--serif:"Cormorant Garamond",Georgia,serif;--sans:"Manrope",Arial,sans-serif}
+*{box-sizing:border-box}
+body{margin:0;background:var(--white);color:var(--ink);font:13px/1.65 var(--sans)}
+a{color:inherit;text-decoration:none}
+.topbar{min-height:78px;display:flex;align-items:center;justify-content:space-between;padding:16px 6%;border-bottom:1px solid var(--line);gap:20px}
+.brand{font:500 25px/1 var(--serif);letter-spacing:.13em}
+.brand span{font:700 12px var(--sans);letter-spacing:.13em}
+.topbar nav{display:flex;gap:22px;font-size:12px}
+.layout{max-width:1160px;margin:0 auto;padding:48px 24px 70px}
+.intro{margin-bottom:26px}
+.eyebrow{font-size:12px;letter-spacing:.2em;color:var(--accent);font-weight:700;margin:0 0 10px}
+.intro h1{font:400 clamp(42px,5vw,60px)/1 var(--serif);margin:0 0 12px}
+.intro h1 em{color:var(--accent);font-weight:400}
+.intro>p:last-child{max-width:650px;color:var(--muted);margin:0}
+.notice{border:1px solid var(--line);background:var(--paper);padding:18px 20px;margin:26px 0 30px}
+.notice strong{font-size:12px}
+.notice p{color:#645e55;margin:5px 0 0;font-size:12px}
+.notice code{font-size:12px;background:#fff;padding:2px 4px}
+.image-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.image-card{border:1px solid var(--line);background:#fff;min-width:0}
+.preview{height:270px;background-color:#e9e1d6;background-position:center;background-size:cover;background-repeat:no-repeat}
+.hero-preview{background-image:url('https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=1300&q=85')}
+.quiz-preview{background-image:url('https://images.unsplash.com/photo-1547887538-e3a2f32cb1cc?auto=format&fit=crop&w=1200&q=85')}
+.card-body{padding:22px}
+.card-body h2,.bottom-actions h2{font:400 29px/1.1 var(--serif);margin:0 0 8px}
+.description{color:var(--muted);font-size:12px;min-height:36px;margin:0 0 20px}
+.card-body label:not(.file-label){display:block;font-size:12px;font-weight:700;margin:15px 0 6px}
+.card-body input[type=url]{width:100%;border:1px solid var(--line);background:#fffdfa;padding:12px;font:11px var(--sans);outline-color:var(--accent)}
+.file-label{display:block;font-size:12px;color:var(--muted);margin:12px 0}
+.file-label input{display:block;margin-top:7px;max-width:100%;font-size:12px}
+.actions{display:flex;justify-content:space-between;gap:10px;margin-top:18px;flex-wrap:wrap}
+.button{display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:0 15px;border:1px solid var(--ink);font:700 12px var(--sans);letter-spacing:.08em;cursor:pointer}
+.primary{background:var(--ink);color:white}
+.secondary{background:transparent;color:var(--ink);border-color:var(--line)}
+.ghost{border:0;background:transparent;color:var(--muted)}
+.bottom-actions{margin-top:28px;padding:24px;border:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:30px}
+.bottom-actions p{font-size:12px;color:var(--muted);max-width:620px;margin:8px 0}
+.status{color:var(--accent)!important}
+.action-stack{display:flex;flex-direction:column;gap:9px;min-width:230px}
+.action-stack .button{width:100%}
+@media(max-width:760px){.topbar{align-items:flex-start;flex-direction:column}
+.topbar nav{gap:16px}
+.layout{padding:32px 15px 45px}
+.image-grid{grid-template-columns:1fr}
+.preview{height:230px}
+.bottom-actions{align-items:stretch;flex-direction:column}
+.action-stack{min-width:0}
+.description{min-height:0}
+}
+
+
+.login-panel{max-width:460px;border:1px solid var(--line);background:var(--paper);padding:28px;margin:30px 0}
+.login-panel h2{font:400 32px/1.1 var(--serif);margin:0 0 8px}
+.login-panel p{font-size:12px;color:var(--muted)}
+.login-panel label{display:block;font-size:12px;font-weight:700;margin:15px 0 6px}
+.login-panel input{width:100%;border:1px solid var(--line);background:#fffdfa;padding:12px;font:12px var(--sans)}
+.login-panel button{margin-top:18px;width:100%}
+#logoutButton{margin-top:12px}
+#loggedInAs{margin-top:10px}
+button:disabled{opacity:.55;cursor:wait}
+[hidden]{display:none!important}
+
+.preview{aspect-ratio:16/9;background:var(--cream);overflow:hidden}.preview img{width:100%;height:100%;object-fit:cover;display:block}
+.image-card label{display:block;font-size:12px;font-weight:700;margin:12px 0 6px}.image-card input{width:100%}
