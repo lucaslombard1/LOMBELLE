@@ -1,0 +1,53 @@
+/* Rodapé */
+
+.site-footer>div>strong,
+.footer-brand~div>strong {
+  font-size: 12px;
+  letter-spacing: .14em;
+  font-weight: 700;
+}
+.site-footer {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1.3fr 1fr;
+  gap: 40px;
+  padding: 55px 7%;
+  background: #24221e;
+  color: #f4eee5;
+}
+.site-footer .brand {
+  align-items: flex-start;
+  color: #f4eee5;
+}
+.site-footer .brand span {
+  font-size: 27px;
+}
+.footer-brand p {
+  font-family: var(--serif);
+  font-size: 19px;
+  line-height: 1.25;
+  color: #c8b9a5;
+  margin-top: 20px;
+}
+.site-footer>div:not(:first-child) {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+.site-footer>div>strong {
+  font-size: 12px;
+  letter-spacing: .18em;
+  margin-bottom: 8px;
+  color: #bba98f;
+}
+.site-footer a:not(.brand),
+.site-footer span,
+.footer-link {
+  font-size: 12px;
+  color: #d0c9bf;
+}
+.footer-link {
+  padding: 0;
+  border: 0;
+  background: none;
+}

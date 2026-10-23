@@ -1,0 +1,36 @@
+/* Formulários (newsletter) */
+
+.newsletter-form {
+  width: min(420px,100%);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  border-bottom: 1px solid var(--ink);
+  align-items: center;
+}
+.newsletter-form input {
+  border: 0;
+  background: transparent;
+  padding: 15px 0;
+  min-width: 0;
+  font-size: 12px;
+}
+.newsletter-form button {
+  border: 0;
+  background: transparent;
+  font-size: 12px;
+  letter-spacing: .1em;
+  font-weight: 700;
+  padding: 12px 0 12px 12px;
+}
+.newsletter-form small {
+  grid-column: 1/-1;
+  color: var(--accent);
+  font-size: 12px;
+  min-height: 16px;
+}
+
+
+.honeypot { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.newsletter-form small { font-size: 12px; color: var(--accent-text); }
+.newsletter-form small.is-error { color: var(--danger); }
+.newsletter-form input::placeholder, .search-line input::placeholder { color: var(--muted); opacity: 1; }
