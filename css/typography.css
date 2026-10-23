@@ -1,0 +1,38 @@
+/* Tipografia compartilhada (títulos serifados, eyebrow) */
+
+.eyebrow {
+  font-size: 12px;
+  letter-spacing: .22em;
+  font-weight: 700;
+  color: var(--accent);
+  margin: 0 0 18px;
+}
+.hero h1,
+.section-heading h2,
+.discovery h2,
+.newsletter h2 {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(45px,5.1vw,74px);
+  line-height: .95;
+  letter-spacing: -.025em;
+  margin: 0;
+}
+.hero h1 em,
+.section-heading h2 em,
+.discovery h2 em {
+  font-weight: 400;
+  color: var(--accent-text);
+}
+.section-heading h2,
+.discovery h2,
+.newsletter h2 {
+  font-size: clamp(39px,4.3vw,58px);
+}
+.quote-section blockquote {
+  font-family: var(--serif);
+  font-size: clamp(26px,3.4vw,42px);
+  margin: 16px auto 18px;
+  max-width: 700px;
+  line-height: 1.15;
+}

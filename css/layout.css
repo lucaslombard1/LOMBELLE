@@ -1,0 +1,28 @@
+/* Layout: seções, cabeçalhos de seção, estados vazios */
+
+.section-wrap {
+  padding: 95px 7%;
+}
+.section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+.section-heading>p {
+  max-width: 255px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.9;
+  margin: 0 0 4px;
+}
+.centered {
+  text-align: center;
+  margin-top: 45px;
+}
+.empty-state {
+  text-align: center;
+  padding: 40px;
+  color: var(--muted);
+}
