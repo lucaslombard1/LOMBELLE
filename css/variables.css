@@ -1,1 +1,19 @@
-/* Arquivo de estilos Lombelle */
+/* Design tokens da LOMBELLE.
+   A paleta original foi preservada; apenas as cores de TEXTO (--muted e --accent-text)
+   foram levemente escurecidas para atingir contraste AA (4.5:1) sobre marfim. */
+:root {
+  --ink: #211f1b;
+  --muted: #6b655c;          /* antes #777168 (4.3:1 sobre --paper) → 5.2:1 */
+  --paper: #f6f2ec;
+  --white: #fffdfa;
+  --line: #ded8ce;
+  --accent: #9b7a54;         /* dourado original: bordas, ícones, foco */
+  --accent-text: #7d6040;    /* dourado para TEXTO pequeno: 5.7:1 sobre --white */
+  --accent-light: #d8c6a5;   /* dourado para fundos escuros */
+  --danger: #9a4f45;
+  --success: #4d6b3c;
+  --serif: "Cormorant Garamond", Georgia, serif;
+  --sans: "Manrope", Arial, sans-serif;
+  --header-h: 82px;
+  --min-target: 40px;
+}
