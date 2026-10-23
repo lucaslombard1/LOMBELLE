@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+Disallow: /admin.html
+Disallow: /admin-imagens.html
+Disallow: /conta.html
+Disallow: /login.html
+Disallow: /cadastro.html
+Disallow: /recuperar-senha.html
+
+# robots.txt NÃO protege nada: o acesso ao painel é protegido por login + RLS no Supabase.
+Sitemap: https://www.lombelle.com.br/sitemap.xml

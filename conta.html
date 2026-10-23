@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Minha conta | LOMBELLE</title>
+  <meta name="robots" content="noindex,nofollow">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/typography.css">
+  <link rel="stylesheet" href="css/components/buttons.css">
+  <link rel="stylesheet" href="css/components/header.css">
+  <link rel="stylesheet" href="css/pages/login.css">
+  <link rel="stylesheet" href="css/components/forms.css">
+  <script type="module" src="js/pages/conta.js"></script>
+</head>
+<body class="auth-page">
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+  <header class="account-header">
+    <a class="brand" href="index.html" aria-label="Lombelle, voltar à loja"><span>LOMBELLE</span><small aria-hidden="true">LE PREMIER REGARD</small></a>
+    <button class="button button-outline" id="logoutBtn" type="button">SAIR</button>
+  </header>
+  <main class="account-wrap" id="conteudo" tabindex="-1">
+    <h1>Minha <em>conta</em></h1>
+    <p class="auth-lead" id="who"></p>
+    <section class="account-card" aria-labelledby="profTitle">
+      <h2 id="profTitle">Perfil</h2>
+      <form class="auth-form" id="profileForm" novalidate>
+        <div class="field"><label for="name">Nome</label><input id="name" type="text" maxlength="100" autocomplete="name" aria-describedby="name-error"><p class="field-error" id="name-error"></p></div>
+        <label class="check"><input type="checkbox" id="newsletter"><span>Receber novidades e lançamentos por e-mail.</span></label>
+        <p class="auth-status" id="authStatus" role="status" aria-live="polite"></p>
+        <button class="button button-dark" id="submitBtn" type="submit">SALVAR PERFIL</button>
+      </form>
+    </section>
+    <section class="account-card" aria-labelledby="ordTitle"><h2 id="ordTitle">Histórico de pedidos</h2><ul class="order-list" id="orders"></ul></section>
+  </main>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

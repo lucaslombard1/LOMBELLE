@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Painel de produtos | LOMBELLE</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="css/pages/admin.css">
+  <script type="module" src="js/admin/admin.js"></script>
+</head>
+<body class="is-checking">
+  <div class="gate" id="gate" role="status">Verificando acesso…</div>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+  <header class="topbar">
+    <a class="brand" href="index.html">LOMBELLE <span>· ADMIN</span></a>
+    <nav aria-label="Painel"><a href="index.html">← Ver loja</a><a href="admin-imagens.html">Imagens do site</a><button class="linklike" id="logoutBtn" type="button">Sair</button></nav>
+  </header>
+  <main class="layout" id="conteudo" tabindex="-1">
+    <section class="intro"><p class="eyebrow">GESTÃO DA LOJA</p><h1>Painel de <em>produtos</em></h1><p>Tudo o que você salvar aqui aparece na loja imediatamente, sem novo deploy.</p></section>
+    <section class="stats" aria-label="Resumo">
+      <article><span>Produtos cadastrados</span><strong id="statTotal">0</strong></article>
+      <article><span>Ativos na loja</span><strong id="statActive">0</strong></article>
+      <article><span>Valor médio</span><strong id="statAverage">R$ 0,00</strong></article>
+    </section>
+    <section class="workspace">
+      <div class="list-panel">
+        <div class="panel-head"><div><p class="eyebrow">CATÁLOGO</p><h2>Seus produtos</h2></div><button class="button primary" id="newProduct" type="button">+ Novo produto</button></div>
+        <div class="toolbar">
+          <label class="sr-only" for="searchProducts">Buscar produtos</label><input id="searchProducts" type="search" placeholder="Buscar por nome ou categoria">
+          <label class="sr-only" for="statusFilter">Filtrar status</label><select id="statusFilter"><option value="all">Todos os status</option><option value="active">Ativos</option><option value="inactive">Inativos</option></select>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <caption class="sr-only">Lista de produtos</caption>
+            <thead><tr><th scope="col">Produto</th><th scope="col">Categoria</th><th scope="col">Preço</th><th scope="col">Status</th><th scope="col">Ações</th></tr></thead>
+            <tbody id="productRows"></tbody>
+          </table>
+        </div>
+        <div class="empty" id="emptyList" role="status" hidden>Nenhum produto encontrado.</div>
+        <div class="export-row">
+          <button class="button secondary" id="exportProducts" type="button">Exportar backup JSON</button>
+          <label class="button secondary import-button" for="importProducts">Importar backup</label><input id="importProducts" class="sr-only" type="file" accept="application/json,.json">
+          <label class="button secondary import-button" for="importCsv">Importar planilha (CSV)</label><input id="importCsv" class="sr-only" type="file" accept=".csv,text/csv">
+          <button class="button secondary" id="csvModel" type="button">Baixar modelo CSV</button>
+        </div>
+        <p class="import-report" id="importReport" role="status"></p>
+      </div>
+
+      <aside class="form-panel" id="editorPanel" aria-labelledby="formHeading">
+        <div class="panel-head"><div><p class="eyebrow">CADASTRO</p><h2 id="formHeading">Novo produto</h2></div></div>
+        <form id="productForm" novalidate>
+          <input type="hidden" id="productId">
+          <label>Nome do perfume<input id="name" required maxlength="100" placeholder="Ex.: Lumière No. 12"></label>
+          <div class="two-cols">
+            <label>Categoria<select id="category" required><option>Feminino</option><option>Masculino</option><option>Unissex</option></select></label>
+            <label>Preço (R$)<input id="price" type="number" min="0.01" step="0.01" inputmode="decimal" required placeholder="319,00"></label>
+          </div>
+          <div class="two-cols">
+            <label>Volume<input id="size" required maxlength="20" placeholder="100 ml"></label>
+            <label>Etiqueta<input id="tag" maxlength="30" placeholder="LANÇAMENTO"></label>
+          </div>
+          <label>Família / tipo olfativo<input id="type" required maxlength="80" placeholder="Floral · Cítrico"></label>
+          <label>Notas olfativas<input id="notes" required maxlength="160" placeholder="Neroli, mandarina e jasmim"></label>
+
+          <fieldset class="photos">
+            <legend>Fotos</legend>
+            <div class="drop" id="drop"><p>Arraste as fotos aqui ou</p><label class="button secondary" for="photoInput">Escolher fotos do computador</label><input id="photoInput" class="sr-only" type="file" accept="image/jpeg,image/png,image/webp" multiple><small class="file-hint">Até 4 fotos · JPG, PNG ou WEBP · máx. 5 MB cada. A primeira é a principal.</small></div>
+            <div class="thumbs" id="thumbs"></div>
+            <div class="url-add"><label class="sr-only" for="imageUrl">Endereço da imagem</label><input id="imageUrl" type="url" placeholder="Ou cole um endereço https://..."><button class="button secondary" type="button" id="addUrl">Adicionar</button></div>
+          </fieldset>
+
+          <label>Descrição<textarea id="description" rows="4" required maxlength="1200" placeholder="Descreva a fragrância..."></textarea></label>
+          <label>Família para o quiz<select id="family"><option value="amadeirado">Amadeirado</option><option value="floral">Floral</option><option value="fresco">Fresco</option><option value="doce">Doce</option></select></label>
+          <label class="checkbox-label"><input id="active" type="checkbox" checked> Produto ativo na loja</label>
+          <div class="form-actions"><button class="button primary" type="submit" id="saveProduct">Salvar produto</button><button class="button secondary" type="button" id="clearForm">Limpar</button></div>
+          <p class="form-message" id="formMessage" role="status" aria-live="polite"></p>
+        </form>
+      </aside>
+    </section>
+  </main>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

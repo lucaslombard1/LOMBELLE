@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Entrar | LOMBELLE</title>
+  <meta name="description" content="Acesse sua conta Lombelle.">
+  <meta name="robots" content="noindex,follow">
+  <meta name="theme-color" content="#f6f2ec">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/typography.css">
+  <link rel="stylesheet" href="css/components/buttons.css">
+  <link rel="stylesheet" href="css/components/header.css">
+  <link rel="stylesheet" href="css/pages/login.css">
+  <script type="module" src="js/pages/login.js"></script>
+</head>
+<body class="auth-page">
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+  <div class="auth-shell">
+    <aside class="auth-hero" aria-hidden="true">
+      <img src="https://images.unsplash.com/photo-1547887538-e3a2f32cb1cc?auto=format&fit=crop&w=1200&q=85" alt="" width="1200" height="900" fetchpriority="high" decoding="async">
+      <div class="auth-hero-copy">
+        <span class="brand"><span>LOMBELLE</span><small>LE PREMIER REGARD</small></span>
+        <blockquote>O perfume é a forma mais intensa da lembrança.</blockquote>
+      </div>
+    </aside>
+    <main class="auth-panel" id="conteudo" tabindex="-1" aria-label="Entrar">
+      <div class="auth-card">
+        <a class="auth-back" href="index.html">← VOLTAR À LOJA</a>
+        <h1>Bem-vinda(o) à <em>Lombelle</em></h1>
+        <p class="auth-lead">Entre para sincronizar seus favoritos, acompanhar pedidos e gerenciar seu perfil.</p>
+        <form class="auth-form" id="loginForm" novalidate>
+          <fieldset class="profile-switch">
+            <legend class="sr-only">Tipo de acesso</legend>
+            <label><input type="radio" name="profile" value="customer" checked>CLIENTE</label>
+            <label><input type="radio" name="profile" value="admin">ADMINISTRADOR</label>
+          </fieldset>
+        <div class="field">
+          <label for="email">E-mail</label>
+          <input id="email" name="email" type="email" autocomplete="email" inputmode="email" required aria-describedby="email-error" aria-invalid="false">
+          <p class="field-error" id="email-error"></p>
+        </div>
+        <div class="field">
+          <label for="password">Senha</label>
+          <div class="password-wrap"><input id="password" name="password" type="password" autocomplete="current-password" required aria-describedby="password-error" aria-invalid="false"><button type="button" class="password-toggle" data-toggle-password="password" aria-pressed="false" aria-label="Mostrar ou ocultar senha">MOSTRAR</button></div>
+
+          <p class="field-error" id="password-error"></p>
+        </div>
+          <p class="auth-status" id="authStatus" role="status" aria-live="polite"></p>
+          <button class="button button-dark" id="submitBtn" type="submit">ENTRAR</button>
+          <div class="auth-links"><a href="recuperar-senha.html">Esqueci minha senha</a><a href="cadastro.html">Criar conta</a></div>
+        </form>
+        <div class="divider" aria-hidden="true">OU</div>
+        <div class="social-row" id="socialRow"></div>
+      </div>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
